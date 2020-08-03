@@ -74,7 +74,7 @@ function showMolfile(clientArea, molString, options) {
 
 // TODO: replace window.onload with something like <https://github.com/ded/domready>
 // to start early
-window.onload = function () {
+function initKetcher() {
 	const params = queryString.parse(document.location.search);
 	if (params.api_path)
 		ketcher.apiPath = params.api_path;
@@ -92,7 +92,7 @@ window.onload = function () {
 	}, () => {
 		document.title += ' (standalone)';
 	});
-};
+}
 
 const buildInfo = {
 	version: '__VERSION__',
@@ -107,5 +107,6 @@ const ketcher = module.exports = Object.assign({ // eslint-disable-line no-multi
 	getMolfile,
 	setMolecule,
 	addFragment,
-	showMolfile
+	showMolfile,
+	initKetcher
 }, buildInfo);
