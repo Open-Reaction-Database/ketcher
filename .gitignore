@@ -7,3 +7,6 @@
 *.pyc
 /extra
 .tern-port
+
+# Used by make as part of the build process.s
+.touch
